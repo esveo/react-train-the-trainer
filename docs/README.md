@@ -73,8 +73,9 @@
 - 2010-2015: AngularJS & HTML 5: https://www.youtube.com/
 - From 2015: Progressive web applications: https://docs.google.com/spreadsheets/
 
---> Increasing app complexity leads to pressure on developers to create tools for simplification.
---> Result: Compilers, frameworks, build chains, programming languages
+→ Increasing app complexity leads to pressure on developers to create tools for simplification.
+
+→ Result: Compilers, frameworks, build chains, programming languages
 
 <div class="break"></div>
 
