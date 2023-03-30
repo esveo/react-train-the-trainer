@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>React train the trainer</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <div class="break"></div>
+<h1 id="react-train-the-trainer">React train the trainer</h1>
+<ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#who-am-i">Who am I?</a></li>
+<li><a href="#who-are-you">Who are you?</a></li>
+<li><a href="#before-we-start">Before we start</a></li>
+</ul>
+</li>
+<li><a href="#topics">Topics</a>
+<ul>
+<li><a href="#basics-of-modern-web-development">Basics of modern web development</a>
+<ul>
+<li><a href="#a-short-journey-through-time">A short journey through time</a></li>
+<li><a href="#nodejs--npm">Node.js &amp; npm</a></li>
+<li><a href="#bundler">Bundler</a></li>
+<li><a href="#typescript">TypeScript</a></li>
+</ul>
+</li>
+<li><a href="#first-steps-with-react">First steps with React</a>
+<ul>
+<li><a href="#jsx">JSX</a></li>
+<li><a href="#components">Components</a></li>
+<li><a href="#props">Props</a></li>
+<li><a href="#data-driven-uis">Data driven UIs</a></li>
+</ul>
+</li>
+<li><a href="#interactive-applications">Interactive applications</a>
+<ul>
+<li><a href="#events--states">Events &amp; States</a></li>
+<li><a href="#controlled--uncontrolled-components">Controlled &amp; uncontrolled components</a></li>
+<li><a href="#state-antipatterns">State antipatterns</a></li>
+</ul>
+</li>
+<li><a href="#leaving-the-pure-world-of-react">Leaving the pure world of React</a>
+<ul>
+<li><a href="#async-io">Async IO</a></li>
+<li><a href="#data-fetching">Data-fetching</a></li>
+<li><a href="#useeffect">useEffect</a></li>
+</ul>
+</li>
+<li><a href="#ecosystem">Ecosystem</a>
+<ul>
+<li><a href="#state-management">State management</a></li>
+<li><a href="#styling">Styling</a></li>
+<li><a href="#routing">Routing</a></li>
+<li><a href="#meta-frameworks">Meta-Frameworks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="break"></div>
+<h2 id="introduction">Introduction</h2>
+<div class="break"></div>
+<h3 id="who-am-i">Who am I?</h3>
+<ul>
+<li>Andreas</li>
+<li>Developer, Trainer, Speaker</li>
+<li>Web technologies with main focus on TypeScript &amp; React</li>
+</ul>
+<div class="break"></div>
+<h3 id="who-are-you">Who are you?</h3>
+<ul>
+<li>Name</li>
+<li>Experience</li>
+<li>Expectations for the workshop</li>
+</ul>
+<div class="break"></div>
+<h3 id="before-we-start">Before we start</h3>
+<ul>
+<li>Be curious</li>
+<li>Be open</li>
+</ul>
+<div class="break"></div>
+<h2 id="topics">Topics</h2>
+<h3 id="basics-of-modern-web-development">Basics of modern web development</h3>
+<div class="break"></div>
+<h4 id="a-short-journey-through-time">A short journey through time</h4>
+<ul>
+<li>1989 invention of the world wide web: <a href="http://info.cern.ch/hypertext/WWW/TheProject.html">http://info.cern.ch/hypertext/WWW/TheProject.html</a></li>
+<li>~2005 &quot;Mitmach-Web&quot; - Wordpress &amp; jQuery: <a href="https://www.ebay.de/">https://www.ebay.de/</a></li>
+<li>2010-2015: AngularJS &amp; HTML 5: <a href="https://www.youtube.com/">https://www.youtube.com/</a></li>
+<li>From 2015: Progressive web applications: <a href="https://docs.google.com/spreadsheets/">https://docs.google.com/spreadsheets/</a></li>
+</ul>
+<p>--&gt; Increasing app complexity leads to pressure on developers to create tools for simplification.
+--&gt; Result: Compilers, frameworks, build chains, programming languages</p>
+<div class="break"></div>
+<h4 id="nodejs--npm">Node.js &amp; npm</h4>
+<h4 id="bundler">Bundler</h4>
+<h4 id="typescript">TypeScript</h4>
+<h3 id="first-steps-with-react">First steps with React</h3>
+<h4 id="jsx">JSX</h4>
+<h4 id="components">Components</h4>
+<h4 id="props">Props</h4>
+<h4 id="data-driven-uis">Data driven UIs</h4>
+<h3 id="interactive-applications">Interactive applications</h3>
+<h4 id="events--states">Events &amp; States</h4>
+<h4 id="controlled--uncontrolled-components">Controlled &amp; uncontrolled components</h4>
+<h4 id="state-antipatterns">State antipatterns</h4>
+<h3 id="leaving-the-pure-world-of-react">Leaving the pure world of React</h3>
+<h4 id="async-io">Async IO</h4>
+<h4 id="data-fetching">Data-fetching</h4>
+<h4 id="useeffect">useEffect</h4>
+<h3 id="ecosystem">Ecosystem</h3>
+<h4 id="state-management">State management</h4>
+<h4 id="styling">Styling</h4>
+<h4 id="routing">Routing</h4>
+<h4 id="meta-frameworks">Meta-Frameworks</h4>
+<p><label id="presentation-mode">Presentation mode <input type="checkbox" checked> </label></p>
+<link rel="stylesheet" href="./README.css">
+<script src="./README.js"></script>
+
+        
+        
+    </body>
+    </html>
