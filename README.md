@@ -1,3 +1,4 @@
 # React train the trainer
 
-[Docs](./docs/README.md)
+- [Markdown Docs](./docs/README.md)
+- [Published Docs](https://esveo.github.io/react-train-the-trainer/README.html)

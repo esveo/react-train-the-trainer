@@ -109,7 +109,7 @@ h1 {
 }
 
 #presentation-mode {
-  position: absolute;
+  position: fixed;
   top: 5px;
   right: 5px;
   font-size: 0.8rem;
