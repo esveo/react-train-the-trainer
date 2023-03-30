@@ -24,4 +24,29 @@ window.onload = () => {
   }
 
   location.hash = location.hash;
+
+  /**
+   * @type {Array<HTMLAnchorElement>}
+   */
+  const allLinks = [...document.querySelectorAll(".heading-link")];
+  document.addEventListener(
+    "scroll",
+    debounce(() => {
+      const firstVisible = allLinks.find((link) => {
+        return link.getBoundingClientRect().top >= 0;
+      });
+
+      history.pushState(null, "", firstVisible?.href || "");
+    }, 200)
+  );
 };
+
+function debounce(func, delay) {
+  let inDebounce;
+  return function debounced() {
+    const context = this;
+    const args = arguments;
+    clearTimeout(inDebounce);
+    inDebounce = setTimeout(() => func.apply(context, args), delay);
+  };
+}
