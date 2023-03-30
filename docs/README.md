@@ -10,8 +10,10 @@
   - [Basics of modern web development](#basics-of-modern-web-development)
     - [A short journey through time](#a-short-journey-through-time)
     - [Node.js \& npm](#nodejs--npm)
-    - [Bundler](#bundler)
+      - [💪 Initialize your project](#-initialize-your-project)
+      - [💪 Cleanup your project](#-cleanup-your-project)
     - [TypeScript](#typescript)
+    - [Bundler](#bundler)
   - [First steps with React](#first-steps-with-react)
     - [JSX](#jsx)
     - [Components](#components)
@@ -81,9 +83,39 @@
 
 #### Node.js & npm
 
-#### Bundler
+- Node.js is a runtime that executes JS outside of the browser
+- Access to OS like file system, network etc. allows implementation of scripts or complete backends
+- Comes with **npm**, the node package manager and **npx** a tool to execute binaries from npm packages
+- Can be installed in user context
+- [Node.js docs](https://nodejs.org/en/docs), [npm docs](https://docs.npmjs.com/cli/v9/commands)
+- Every modern web application is an (unpublished) npm package
+
+<div class="break"></div>
+
+##### 💪 Initialize your project
+
+1. Open a terminal in the folder that should contain your project folder.
+1. Run `npx create vite@latest` and select the React & TypeScript preset. This will create a new folder with our new web project.
+1. Navigate into the folder and run `npm i` to install the project dependencies.
+1. Run `npm run dev` to start our application and open it in a browser.
+
+<div class="break"></div>
+
+##### 💪 Cleanup your project
+
+1. Now that we have everything set up, let's first clear everything that we do not need at the moment
+2. Delete everything inside of the `src` folder, except TODO.
+3. Add `console.log('Hello World')` to your `main.tsx` file.
+
+<div class="break"></div>
 
 #### TypeScript
+
+```ts
+const x: string = "Hello world";
+```
+
+#### Bundler
 
 ### First steps with React
 

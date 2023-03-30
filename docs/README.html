@@ -39,7 +39,7 @@
 </style>
         
     </head>
-    <body class="vscode-body vscode-light">
+    <body class="vscode-body vscode-dark">
         <div class="break"></div>
 <h1 id="react-train-the-trainer">React train the trainer</h1>
 <ul>
@@ -55,9 +55,14 @@
 <li><a href="#basics-of-modern-web-development">Basics of modern web development</a>
 <ul>
 <li><a href="#a-short-journey-through-time">A short journey through time</a></li>
-<li><a href="#nodejs--npm">Node.js &amp; npm</a></li>
-<li><a href="#bundler">Bundler</a></li>
+<li><a href="#nodejs--npm">Node.js &amp; npm</a>
+<ul>
+<li><a href="#-initialize-your-project">💪 Initialize your project</a></li>
+<li><a href="#-cleanup-your-project">💪 Cleanup your project</a></li>
+</ul>
+</li>
 <li><a href="#typescript">TypeScript</a></li>
+<li><a href="#bundler">Bundler</a></li>
 </ul>
 </li>
 <li><a href="#first-steps-with-react">First steps with React</a>
@@ -130,8 +135,34 @@
 <p>→ Result: Compilers, frameworks, build chains, programming languages</p>
 <div class="break"></div>
 <h4 id="nodejs--npm">Node.js &amp; npm</h4>
-<h4 id="bundler">Bundler</h4>
+<ul>
+<li>Node.js is a runtime that executes JS outside of the browser</li>
+<li>Access to OS like file system, network etc. allows implementation of scripts or complete backends</li>
+<li>Comes with <strong>npm</strong>, the node package manager and <strong>npx</strong> a tool to execute binaries from npm packages</li>
+<li>Can be installed in user context</li>
+<li><a href="https://nodejs.org/en/docs">Node.js docs</a>, <a href="https://docs.npmjs.com/cli/v9/commands">npm docs</a></li>
+<li>Every modern web application is an (unpublished) npm package</li>
+</ul>
+<div class="break"></div>
+<h5 id="-initialize-your-project">💪 Initialize your project</h5>
+<ol>
+<li>Open a terminal in the folder that should contain your project folder.</li>
+<li>Run <code>npx create vite@latest</code> and select the React &amp; TypeScript preset. This will create a new folder with our new web project.</li>
+<li>Navigate into the folder and run <code>npm i</code> to install the project dependencies.</li>
+<li>Run <code>npm run dev</code> to start our application and open it in a browser.</li>
+</ol>
+<div class="break"></div>
+<h5 id="-cleanup-your-project">💪 Cleanup your project</h5>
+<ol>
+<li>Now that we have everything set up, let's first clear everything that we do not need at the moment</li>
+<li>Delete everything inside of the <code>src</code> folder, except TODO.</li>
+<li>Add <code>console.log('Hello World')</code> to your <code>main.tsx</code> file.</li>
+</ol>
+<div class="break"></div>
 <h4 id="typescript">TypeScript</h4>
+<pre><code class="language-ts"><span class="hljs-keyword">const</span> <span class="hljs-attr">x</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;Hello world&quot;</span>;
+</code></pre>
+<h4 id="bundler">Bundler</h4>
 <h3 id="first-steps-with-react">First steps with React</h3>
 <h4 id="jsx">JSX</h4>
 <h4 id="components">Components</h4>
