@@ -57,42 +57,82 @@
 <li><a href="#a-short-journey-through-time">A short journey through time</a></li>
 <li><a href="#nodejs--npm">Node.js &amp; npm</a>
 <ul>
-<li><a href="#-initialize-your-project">💪 Initialize your project</a></li>
-<li><a href="#-cleanup-your-project">💪 Cleanup your project</a></li>
+<li><a href="#exercise-initialize-your-project">Exercise: Initialize your project</a></li>
+<li><a href="#exercise-cleanup-your-project">Exercise: Cleanup your project</a></li>
+<li><a href="#tour-through-the-project">Tour through the project</a></li>
+<li><a href="#bundlers">Bundlers</a></li>
+<li><a href="#popular-bundlers">Popular bundlers</a></li>
 </ul>
 </li>
-<li><a href="#typescript">TypeScript</a></li>
-<li><a href="#bundler">Bundler</a></li>
+<li><a href="#typescript">TypeScript</a>
+<ul>
+<li><a href="#some-examples">Some examples</a></li>
+<li><a href="#exercise-first-steps-in-typescript">Exercise: First steps in TypeScript</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#first-steps-with-react">First steps with React</a>
 <ul>
-<li><a href="#jsx">JSX</a></li>
-<li><a href="#components">Components</a></li>
-<li><a href="#props">Props</a></li>
-<li><a href="#data-driven-uis">Data driven UIs</a></li>
+<li><a href="#jsx">JSX</a>
+<ul>
+<li><a href="#exercise-render-your-first-element">Exercise: Render your first element</a></li>
+<li><a href="#rules-of-jsx">Rules of JSX</a></li>
+</ul>
+</li>
+<li><a href="#components">Components</a>
+<ul>
+<li><a href="#exercise-your-first-components">Exercise: Your first components</a></li>
+</ul>
+</li>
+<li><a href="#data-driven-uis">Data driven UIs</a>
+<ul>
+<li><a href="#exercise-reusing-components">Exercise: Reusing components</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#interactive-applications">Interactive applications</a>
 <ul>
-<li><a href="#events--states">Events &amp; States</a></li>
+<li><a href="#events--states">Events &amp; States</a>
+<ul>
+<li><a href="#exercise-make-your-app-interactive">Exercise: Make your app interactive</a></li>
+<li><a href="#how-state-works">How state works</a></li>
+</ul>
+</li>
 <li><a href="#controlled--uncontrolled-components">Controlled &amp; uncontrolled components</a></li>
-<li><a href="#state-antipatterns">State antipatterns</a></li>
+<li><a href="#state-antipatterns">State antipatterns</a>
+<ul>
+<li><a href="#exercise-building-your-first-form">Exercise: Building your first form</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#leaving-the-pure-world-of-react">Leaving the pure world of React</a>
 <ul>
 <li><a href="#async-io">Async IO</a></li>
-<li><a href="#data-fetching">Data-fetching</a></li>
-<li><a href="#useeffect">useEffect</a></li>
+<li><a href="#data-fetching">Data-fetching</a>
+<ul>
+<li><a href="#data-fetching-and-type-safety">Data fetching and type safety</a></li>
+<li><a href="#promises">Promises</a></li>
+<li><a href="#exercise-building-some-data-loading-functions-for-httpspokeapico">Exercise: Building some data loading functions for https://pokeapi.co/</a></li>
+</ul>
+</li>
+<li><a href="#useeffect">useEffect</a>
+<ul>
+<li><a href="#exercise-displaying-pokemon">Exercise: Displaying pokemon</a></li>
+<li><a href="#the-cleanup-function">The cleanup function</a></li>
+<li><a href="#exercise-playing-around-with-effects">Exercise: Playing around with effects</a></li>
+</ul>
+</li>
+<li><a href="#ground-rules-of-react">Ground rules of React</a></li>
 </ul>
 </li>
 <li><a href="#ecosystem">Ecosystem</a>
 <ul>
 <li><a href="#state-management">State management</a></li>
 <li><a href="#styling">Styling</a></li>
-<li><a href="#routing">Routing</a></li>
-<li><a href="#meta-frameworks">Meta-Frameworks</a></li>
+<li><a href="#rendering-modes-and-meta-frameworks">Rendering modes and meta frameworks</a></li>
 </ul>
 </li>
 </ul>
@@ -138,49 +178,401 @@
 <ul>
 <li>Node.js is a runtime that executes JS outside of the browser</li>
 <li>Access to OS like file system, network etc. allows implementation of scripts or complete backends</li>
-<li>Comes with <strong>npm</strong>, the node package manager and <strong>npx</strong> a tool to execute binaries from npm packages</li>
+<li>Comes with <strong>npm</strong>, the node package manager</li>
 <li>Can be installed in user context</li>
 <li><a href="https://nodejs.org/en/docs">Node.js docs</a>, <a href="https://docs.npmjs.com/cli/v9/commands">npm docs</a></li>
 <li>Every modern web application is an (unpublished) npm package</li>
+<li>Important commands:
+<ul>
+<li><code>node script.js</code> executes some piece of JavaScript directly on your machine</li>
+<li><code>npm i &lt;package-name&gt;</code> install a package and add it to the dependencies of your project</li>
+<li><code>npm i -D &lt;package-name&gt;</code> install a package and add it to the dev dependencies of your project</li>
+<li><code>npm remove &lt;package-name&gt;</code> removes a package from all dependencies</li>
+<li><code>npm i</code> install all packages that are defined in <code>package.json</code> and <code>package-lock.json</code>.</li>
+</ul>
+</li>
 </ul>
 <div class="break"></div>
-<h5 id="-initialize-your-project">💪 Initialize your project</h5>
+<h5 id="exercise-initialize-your-project">Exercise: Initialize your project</h5>
 <ol>
 <li>Open a terminal in the folder that should contain your project folder.</li>
-<li>Run <code>npx create vite@latest</code> and select the React &amp; TypeScript preset. This will create a new folder with our new web project.</li>
+<li>Run <code>npm create vite@latest</code> and select the React &amp; TypeScript preset. This will create a new folder with our new web project.</li>
 <li>Navigate into the folder and run <code>npm i</code> to install the project dependencies.</li>
 <li>Run <code>npm run dev</code> to start our application and open it in a browser.</li>
 </ol>
 <div class="break"></div>
-<h5 id="-cleanup-your-project">💪 Cleanup your project</h5>
+<h5 id="exercise-cleanup-your-project">Exercise: Cleanup your project</h5>
 <ol>
 <li>Now that we have everything set up, let's first clear everything that we do not need at the moment</li>
-<li>Delete everything inside of the <code>src</code> folder, except TODO.</li>
-<li>Add <code>console.log('Hello World')</code> to your <code>main.tsx</code> file.</li>
+<li>Delete everything inside of the <code>src</code> folder, except <code>main.tsx</code> and <code>vite-env.d.ts</code>.</li>
+<li>Add <code>console.log('Hello World')</code> to your <code>main.tsx</code> file and make sure this runs in your browser.</li>
 </ol>
 <div class="break"></div>
+<h5 id="tour-through-the-project">Tour through the project</h5>
+<ul>
+<li><code>package.json</code>:
+<ul>
+<li><code>dependencies</code>: List of packages that are required at runtime for your project</li>
+<li><code>devDependencies</code>: List of packages that are required at development/build time</li>
+<li><code>scripts</code>: Reusable commands to run, developer, build, package or publish your project</li>
+</ul>
+</li>
+<li><code>package-lock.json</code>: Lists the exact version of every dependency and their dependency that was installed on the first <code>npm i</code></li>
+<li><code>node_modules/</code>: All dependencies of npm projects are stored directly within the project. You can open this folder and even directly change code of dependencies, since the packages mostly use JavaScript.</li>
+<li><code>vite.config.ts</code> configuration for vite</li>
+<li><code>tsconfig.json</code> and <code>tsconfig.node.json</code> configuration files for TypeScript (for the node context, running during build and the browser context)</li>
+<li><code>index.html</code> your HTML entry point, that imports <code>src/main.tsx</code>, your TypeScript entry point.</li>
+</ul>
+<div class="break"></div>
+<h5 id="bundlers">Bundlers</h5>
+<ul>
+<li>Prepare Code AND assets for consumption in the browser</li>
+<li>Typically come with a dev server</li>
+<li>May include optimizers and transpilers (SCSS, TypeScript)</li>
+</ul>
+<div class="break"></div>
+<h5 id="popular-bundlers">Popular bundlers</h5>
+<ul>
+<li>Webpack (included in Create React App, Angular CLI and many more). Hard to configure</li>
+<li>Vite (default for Vue.js, Solid.js and more &quot;newcomers&quot;). Easy to configure, very fast</li>
+<li>Parcel (feature rich but rarely used), very little configuration possible, very fast</li>
+</ul>
+<div class="break"></div>
 <h4 id="typescript">TypeScript</h4>
-<pre><code class="language-ts"><span class="hljs-keyword">const</span> <span class="hljs-attr">x</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;Hello world&quot;</span>;
+<ul>
+<li>JavaScript with types</li>
+<li>Completely gone at runtime ➡️ the browser only runs JavaScript</li>
+<li>Supports really dynamic patterns, as it should work with common JS</li>
+<li>More JavaScript with types than Java/C# in the browser</li>
+</ul>
+<div class="break"></div>
+<h5 id="some-examples">Some examples</h5>
+<div class="break"></div>
+<h5 id="exercise-first-steps-in-typescript">Exercise: First steps in TypeScript</h5>
+<ul>
+<li>
+<p>Create a new file: <code>src/math.ts</code></p>
+</li>
+<li>
+<p>Define and export functions <code>add</code>, <code>subtract</code>, <code>multiply</code> and <code>divide</code>, that all take two numbers and execute the respective math operation and return the result.</p>
+</li>
+<li>
+<p>In <code>main.tsx</code>, use the global <code>prompt</code> function to ask the user for a first number (repeat if the user did not provide a number), use it again to ask for a second number, and then, ask for a math operation (<code>+</code>, <code>-</code>, <code>*</code> or <code>/</code>) to then execute the given operation and display the result with <code>alert</code></p>
+<ul>
+<li>You can use <code>parseInt</code> or <code>parseFloat</code> to get a number from a string (not that JS only has the runtime type <code>number</code>). If you try to parse some non-numeric string (like &quot;hello&quot;), the result will be <code>NaN</code> Not a Number</li>
+<li>You can check if a value is NaN by using <code>Number.isNaN(value)</code></li>
+</ul>
+</li>
+<li>
+<p>Optional part 2: Define a function <code>memoize</code>. This function can be called with any function that takes one argument, and returns a new function with the same signature. However, this returned function is automatically cache. Whenever this new function is called with an argument that has been used in the passed, the previous result is returned immediately without executing the base function. Example code:</p>
+</li>
+</ul>
+<pre><code class="language-tsx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">isPrime</span>(<span class="hljs-params">n: number</span>) {
+  <span class="hljs-keyword">const</span> end = n ** <span class="hljs-number">0.5</span>;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">2</span>; i &lt; end; i++) {
+    <span class="hljs-keyword">if</span> ((n / i) % <span class="hljs-number">1</span> === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-keyword">const</span> cached = <span class="hljs-title function_">memoize</span>(isPrime);
+
+<span class="hljs-comment">// Calculates for 10</span>
+<span class="hljs-title function_">isPrime</span>(<span class="hljs-number">10</span>);
+
+<span class="hljs-comment">// Calculates for 5</span>
+<span class="hljs-title function_">isPrime</span>(<span class="hljs-number">5</span>);
+
+<span class="hljs-comment">// Directly reuses the previous result for 10</span>
+<span class="hljs-title function_">isPrime</span>(<span class="hljs-number">10</span>);
 </code></pre>
-<h4 id="bundler">Bundler</h4>
+<div class="break"></div>
 <h3 id="first-steps-with-react">First steps with React</h3>
 <h4 id="jsx">JSX</h4>
+<ul>
+<li>Examples first</li>
+</ul>
+<div class="break"></div>
+<ul>
+<li>Every JSX Element is a function call,</li>
+<li>that creates a small JavaScript object,</li>
+<li>that describes, how the user interface should look like</li>
+<li>Only displays anything when passed to <code>createRoot(someDomNode).render(&lt;div&gt;&lt;/div&gt;)</code> or returned from a component</li>
+</ul>
+<div class="break"></div>
+<h5 id="exercise-render-your-first-element">Exercise: Render your first element</h5>
+<ul>
+<li>Check out your <code>index.html</code> file and identify an HTML element that can be used as the entry point to your React application</li>
+<li>Within <code>main.tsx</code>, use <code>document.getElementById</code> or <code>document.querySelector</code> to get a reference to this HTML element</li>
+<li>Use <code>createRoot(element).render(&lt;h1&gt;Hello World&lt;/h1&gt;);</code> to render a heading inside of you root element.</li>
+</ul>
+<div class="break"></div>
+<h5 id="rules-of-jsx">Rules of JSX</h5>
+<ul>
+<li>You always need exactly one root JSX element (even if it is the empty node <code>&lt;&gt;...&lt;/&gt;</code> to group JSX)</li>
+<li>All tags need to be closed (or self-closed) <code>&lt;input /&gt;</code>, <code>&lt;img /&gt;</code>, <code>&lt;li&gt;...&lt;/li&gt;</code></li>
+<li>React uses the JavaScript property names instead of the HTML attribute names. So <code>className</code> instead of <code>class</code>, <code>htmlFor</code> instead of <code>for</code>, <code>onError</code> instead of <code>onerror</code></li>
+</ul>
+<div class="break"></div>
 <h4 id="components">Components</h4>
-<h4 id="props">Props</h4>
+<ul>
+<li>Examples first</li>
+</ul>
+<div class="break"></div>
+<ul>
+<li>Functions, that return JSX</li>
+<li>Receive one argument: the <code>props</code> object.</li>
+<li>NEVER call a component as a function yourself. They are made to be called by React</li>
+<li>Small, reusable, isolated components (<a href="https://overreacted.io/writing-resilient-components/">writing resilient components</a>).</li>
+<li>Normally have their own styling &quot;co-located&quot; directly in the same file or right next to it. (<code>vite</code> allows you to import css or scss files)</li>
+</ul>
+<div class="break"></div>
+<h5 id="exercise-your-first-components">Exercise: Your first components</h5>
+<ul>
+<li>Create a new file <code>App.tsx</code>. Define and export a new component (<code>App</code>) that renders a heading with the text <code>Hello World</code> and render this <code>App</code> component in your project entry point in <code>main.tsx</code>.</li>
+<li>Define a <code>Header</code> component that displays a navigation with 3 links to google, bing and ecosia</li>
+<li>Display a button at the top right that shows a question mark (you can use the ❔ emoji as an icon). Nothing should happen on click for now.</li>
+<li>Use the <code>Header</code> component inside of your <code>App</code> component</li>
+</ul>
+<div class="break"></div>
 <h4 id="data-driven-uis">Data driven UIs</h4>
+<ul>
+<li>React is declarative!</li>
+<li>Everything is derived from data.</li>
+<li>To make anything dynamic we can add forks (<code>if ... else</code>) or loops. Simple control flow.</li>
+<li>Common practice is to use the ternary operator <code>condition ? trueValue : falseValue</code> and the <code>[].map()</code> function for control flow.</li>
+</ul>
+<div class="break"></div>
+<ul>
+<li>Examples</li>
+</ul>
+<div class="break"></div>
+<h5 id="exercise-reusing-components">Exercise: Reusing components</h5>
+<ul>
+<li>Define a new component <code>Link</code> (optimally in its own file) that retrieves three props: <code>href</code>, <code>children</code> (for the content) and <code>isActive</code>, a boolean indicating whether the link should be marked as active link. Indicate this visually via a background, a border, a different text color or something like this.</li>
+<li>Within your Header component, instead of manually rendering three anchor tags, define a list with the 3 links in it, loop over the list, and render a <code>&lt;Link /&gt;</code> element for every link.</li>
+</ul>
+<div class="break"></div>
 <h3 id="interactive-applications">Interactive applications</h3>
 <h4 id="events--states">Events &amp; States</h4>
+<ul>
+<li>Examples of useState and callback functions</li>
+</ul>
+<div class="break"></div>
+<h5 id="exercise-make-your-app-interactive">Exercise: Make your app interactive</h5>
+<ul>
+<li>Part 1
+<ul>
+<li>Define a new component <code>CounterButton</code>
+<ul>
+<li>Define a state variable &quot;count&quot; with <code>useState</code> and initialise it with <code>0</code></li>
+<li>Return a <code>&lt;button&gt;</code>-element that displays the current count</li>
+<li>Whenever the button is clicked, the count should be incremented by 1</li>
+</ul>
+</li>
+<li>Render the CounterButton on the left side in your <code>Header</code></li>
+</ul>
+</li>
+<li>Part 2 (optional)
+<ul>
+<li>Whenever someone clicks on the question mark button, a model should open that displays some help text</li>
+</ul>
+</li>
+</ul>
+<div class="break"></div>
+<h5 id="how-state-works">How state works</h5>
+<ul>
+<li>React triggers a re-render whenever someone calls a state setter.</li>
+<li>The rerender starts at the component, that defined the useState variable,</li>
+<li>and continues through all child components recursively.</li>
+<li>You need to make sure that these constant rerenders will not break anything in your application (no side effects in your function body like calling a network API)</li>
+</ul>
+<div class="break"></div>
 <h4 id="controlled--uncontrolled-components">Controlled &amp; uncontrolled components</h4>
+<ul>
+<li>React favors top down data flow</li>
+<li>When you want to control the state of a component (eg change it from the outside or reset it) you should pull the state out and manage it on the outside, where you need control.</li>
+<li>State should be kept as far down in the component tree as possible but pulled up when necessary.</li>
+</ul>
+<div class="break"></div>
 <h4 id="state-antipatterns">State antipatterns</h4>
+<ul>
+<li>Derived state is not real state!</li>
+<li>No conceptual state should have its source at two <code>useState</code> locations.</li>
+<li>Sometimes no state is needed at all. State is only necessary when you need the value for rendering.</li>
+</ul>
+<div class="break"></div>
+<h5 id="exercise-building-your-first-form">Exercise: Building your first form</h5>
+<ul>
+<li>Build a signup form with 4 fields:
+<ul>
+<li>A name field (<code>&lt;input type=&quot;text&quot; /&gt;</code>)</li>
+<li>The date of birth (<code>&lt;input type=&quot;date&quot; /&gt;</code>)</li>
+<li>A dropdown for the favorite color (<code>&lt;select&gt;</code> with some <code>&lt;option&gt;</code> children)</li>
+<li>A checkbox (<code>&lt;input type=&quot;checkbox&quot; /&gt;</code>) to agree to the terms and conditions</li>
+</ul>
+</li>
+<li>And a submit button, that logs all 4 values to the console.</li>
+<li>Add validation:
+<ul>
+<li>The name must be longer than 3 characters</li>
+<li>The user must be at least 18 years old</li>
+<li>The terms and conditions need to be accepted</li>
+</ul>
+</li>
+<li>If any validation rule fails, the submit button should be disabled and an error message should be displayed</li>
+</ul>
+<div class="break"></div>
 <h3 id="leaving-the-pure-world-of-react">Leaving the pure world of React</h3>
+<ul>
+<li>So far, everything was inside of React. States and Props, nothing else.</li>
+<li>This is the best case, since this allows for platform independence (React native, React Ink, React Canvas etc.)</li>
+<li>So far the usefulness of our app is limited... We often need to communicate with the world outside of React</li>
+<li>Examples: Display data from the backend, use information about the DOM, like the size of elements, get data from some third party library without React integration</li>
+</ul>
+<div class="break"></div>
 <h4 id="async-io">Async IO</h4>
+<ul>
+<li>The JS userspace is single threaded</li>
+<li>All user interactions, UI calculations and updates are all happening on one thread</li>
+<li>If this thread is busy (for example with calculating the 1 billionth prime number), the UI freezes</li>
+<li>Communication with the network or (in node.js) the file system are inherently slow, but we do not want to block our main thread!</li>
+<li>This is why JS leans heavily on async operations.</li>
+<li>That means we can start some piece of slow work, continue with what we were doing before while getting informed as soon as this slow part of work is done.</li>
+<li>This is mostly implemented with callbacks.</li>
+</ul>
+<div class="break"></div>
 <h4 id="data-fetching">Data-fetching</h4>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest?retiredLocale=de">XMLHttpRequest</a>, old, tedious API, supports chunked data, cancellation, sync requests, used by some popular libraries like Angular CLI</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">fetch</a>, more modern, easier to use, based on promises, supports cancellation</li>
+<li>Wrapper libraries like <a href="https://axios-http.com/docs/intro">Axios</a> or <a href="https://api.jquery.com/jquery.ajax/">jQuery.ajax</a></li>
+</ul>
+<div class="break"></div>
+<h5 id="data-fetching-and-type-safety">Data fetching and type safety</h5>
+<ul>
+<li>Data comes at runtime from an external source.</li>
+<li>There is no way, TypeScript can know at build time, what will be returned, so we have to help</li>
+<li>There is no way for TypeScript to validate at runtime, since it is compiled away.</li>
+</ul>
+<div class="break"></div>
+<h5 id="promises">Promises</h5>
+<ul>
+<li>Same concept as Java's <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html">CompletableFuture</a> class</li>
+<li>A container for some value that will only be available some time in the future (or fail on error cases)</li>
+<li>Prevents &quot;callback hell&quot;</li>
+<li>Can be simplified with async/await</li>
+</ul>
+<div class="break"></div>
+<h5 id="exercise-building-some-data-loading-functions-for-httpspokeapico">Exercise: Building some data loading functions for <a href="https://pokeapi.co/">https://pokeapi.co/</a></h5>
+<ul>
+<li>Part 1
+<ul>
+<li>Create a new file <code>src/pokeapi.ts</code>.</li>
+<li>Write a function <code>getAllPokemon(limit: number, offset: number)</code> in which you hit the pokeapi to load the first <code>limit</code> pokemon after the first <code>offset</code> pokemon (typical pagination interface). You can use async/await or native promises.</li>
+<li>Log the response body to the console and model a type <code>PokemonSummary</code> that fits to the response</li>
+<li>Add the return type to the function so that users of the api can have type safety.</li>
+</ul>
+</li>
+<li>Part 2
+<ul>
+<li>Implement a second function <code>getPokemonByName(name: string): Promise&lt;PokemonDetails&gt;</code></li>
+</ul>
+</li>
+</ul>
+<div class="break"></div>
 <h4 id="useeffect">useEffect</h4>
+<ul>
+<li>As mentioned before, communication with the outside world have to happen outside somewhere where they do not re-run on every re-render.</li>
+<li>That is what <a href="https://react.dev/reference/react/useEffect"><code>useEffect</code></a> is made for.</li>
+</ul>
+<div class="break"></div>
+<h5 id="exercise-displaying-pokemon">Exercise: Displaying pokemon</h5>
+<ul>
+<li>
+<p>Part 1</p>
+<ul>
+<li>Inside of your app component, define a state for the current page and load the pokemon for that page via your API call (use useEffect and useState for this.)</li>
+<li>Render a list with those pokemon names</li>
+<li>Add a back and forward button below the list that change the page state, that should then automatically trigger a refetch for the new data</li>
+</ul>
+</li>
+<li>
+<p>Part 2</p>
+<ul>
+<li>Add a new state for the name of the selected pokemon</li>
+<li>Make every entry in your list clickable. When clicked, the name of the clicked pokemon should be put into the selected pokemon state.</li>
+<li>Highlight the selected pokemon in the list.</li>
+</ul>
+</li>
+<li>
+<p>Part 3</p>
+<ul>
+<li>If a pokemon is selected, render a new component <code>PokemonDetails</code>, that uses the <code>getPokemonByName</code> api to load the details of this pokemon and displays the name, the number and an image (inside of the sprites field) of the selected pokemon.</li>
+</ul>
+</li>
+</ul>
+<div class="break"></div>
+<h5 id="the-cleanup-function">The cleanup function</h5>
+<ul>
+<li>Whenever you &quot;build something up&quot; inside of your effect, you have to clean it up again to prevent memory leaks</li>
+<li>Even simple fetch requests can cause problems when the effects are fire too often.</li>
+</ul>
+<div class="break"></div>
+<h5 id="exercise-playing-around-with-effects">Exercise: Playing around with effects</h5>
+<ul>
+<li>Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/setInterval"><code>setInterval</code></a> to log the currently selected pokemon name to the console every 5 seconds</li>
+<li>Be careful to add a cleanup (<code>clearInterval</code>) to prevent memory leaks.</li>
+</ul>
+<div class="break"></div>
+<h4 id="ground-rules-of-react">Ground rules of React</h4>
+<ul>
+<li>Never mutate shared data, this breaks dependency array checks.</li>
+<li>Never vary the amount of hooks within a component at runtime, for example within loops or conditionals. If you need this, create a component, pull the hook into the component, and render the component conditionally or within a loop.</li>
+<li>NO side effects during rendering.</li>
+</ul>
+<div class="break"></div>
 <h3 id="ecosystem">Ecosystem</h3>
+<ul>
+<li>With the introduction of hooks in 2018, React class components were basically marked as legacy.</li>
+<li>They will stay supported for the years to come, but are not the recommended approach.</li>
+<li>With this change, many libraries and their APIs have changed dramatically which leads to many outdated tutorials.</li>
+</ul>
+<div class="break"></div>
 <h4 id="state-management">State management</h4>
+<ul>
+<li>State management helps you to separate stateful business logic from the rendering logic</li>
+<li>Popular solutions
+<ul>
+<li><a href="https://redux.js.org/">Redux</a> and its newer version <a href="https://redux-toolkit.js.org/">Redux Toolkit</a> while used a lot in the past, really overkill for most projects</li>
+<li>Micro state managers like <a href="https://jotai.org/">Jotai</a>, <a href="https://github.com/pmndrs/zustand">Zustand</a> or <a href="https://github.com/pmndrs/valtio">Valtio</a> can make things easier but are still not really needed for smaller to medium sized projects.</li>
+</ul>
+</li>
+<li>Modern data fetching libraries like <a href="https://tanstack.com/query/v3/">React Query</a> alleviate the need other state managers even more.</li>
+</ul>
+<div class="break"></div>
 <h4 id="styling">Styling</h4>
-<h4 id="routing">Routing</h4>
-<h4 id="meta-frameworks">Meta-Frameworks</h4>
+<ul>
+<li>There is no unified approach to styling</li>
+<li>Plain CSS: Seldomly used</li>
+<li>SCSS: Very common since it includes variables and makros</li>
+<li>CSS/SCSS-modules: Improve the base experience</li>
+<li>CSS-in-JS: Was trendy some years ago but quickly loses traction because of performance problems</li>
+<li>Utility first frameworks: <a href="https://tailwindcss.com/">TailwindCSS</a> is really trendy at the moment</li>
+<li>Component libraries: Since React is so popular, there are literally hundreds of component libraries. Popular ones include <a href="https://mui.com/">MUI</a> (material design in React, REALLY mature), <a href="https://mantine.dev/">Mantine</a> and <a href="https://react-bootstrap.github.io/">React-Bootstrap</a></li>
+</ul>
+<div class="break"></div>
+<h4 id="rendering-modes-and-meta-frameworks">Rendering modes and meta frameworks</h4>
+<ul>
+<li>React can be used fully client side.
+<ul>
+<li>One &quot;empty&quot; HTML file.</li>
+<li>If you still want URLs, use a client side router like <a href="https://reactrouter.com/en/main">React-Router</a>. Note, this is no official library but basically standard.</li>
+</ul>
+</li>
+<li>Static Site generation: At build time, different html pages are pre-generated FROM your React code, which leads to much better time-to-first byte. In the past, <a href="https://www.gatsbyjs.com/">Gatsby.js</a> was used a lot for this, but by now, <a href="https://nextjs.org/">Next.js</a> is generally preferred.</li>
+<li>Server side rendering: At request time, your components are executed on the server, to serve a complete HTML document. On the client, React then takes over again for interactions. <a href="https://nextjs.org/">Next.js</a> is basically the defacto standard if you need this.</li>
+</ul>
 <p><label id="presentation-mode">Presentation mode <input type="checkbox" checked> </label></p>
 <link rel="stylesheet" href="./README.css">
 <script src="./README.js"></script>
