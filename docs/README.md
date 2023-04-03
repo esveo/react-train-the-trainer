@@ -219,7 +219,7 @@ isPrime(10);
 - Every JSX Element is a function call,
 - that creates a small JavaScript object,
 - that describes, how the user interface should look like
-- Only displays anything when passed to `createRoot(someDomNode).render(<div></div>)` or returned from a component
+- and only displays anything when passed to `createRoot(someDomNode).render(<div></div>)` or returned from a component
 
 <div class="break"></div>
 
@@ -278,7 +278,7 @@ isPrime(10);
 ##### Exercise: Reusing components
 
 - Define a new component `Link` (optimally in its own file) that retrieves three props: `href`, `children` (for the content) and `isActive`, a boolean indicating whether the link should be marked as active link. Indicate this visually via a background, a border, a different text color or something like this.
-- Within your Header component, instead of manually rendering three anchor tags, define a list with the 3 links in it, loop over the list, and render a `<Link />` element for every link.
+- Within your Header component, instead of manually rendering three anchor tags, define a list with the 3 links in it, loop over the list, and render a `<Link />` element for every link. The first link should be marked as active.
 
 <div class="break"></div>
 
@@ -404,7 +404,7 @@ isPrime(10);
 
 #### useEffect
 
-- As mentioned before, communication with the outside world have to happen outside somewhere where they do not re-run on every re-render.
+- As mentioned before, communication with the outside world has to happen somewhere where they do not re-run on every re-render, so not directly within a component function's body.
 - That is what [`useEffect`](https://react.dev/reference/react/useEffect) is made for.
 
 <div class="break"></div>
