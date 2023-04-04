@@ -180,7 +180,7 @@
 - Define and export functions `add`, `subtract`, `multiply` and `divide`, that all take two numbers and execute the respective math operation and return the result.
 - In `main.tsx`, use the global `prompt` function to ask the user for a first number (repeat if the user did not provide a number), use it again to ask for a second number, and then, ask for a math operation (`+`, `-`, `*` or `/`) to then execute the given operation and display the result with `alert`
 
-  - You can use `parseInt` or `parseFloat` to get a number from a string (not that JS only has the runtime type `number`). If you try to parse some non-numeric string (like "hello"), the result will be `NaN` Not a Number
+  - You can use `parseInt` or `parseFloat` to get a number from a string (note that JS only has the runtime type `number`). If you try to parse some non-numeric string (like "hello"), the result will be `NaN` Not a Number
   - You can check if a value is NaN by using `Number.isNaN(value)`
 
 - Optional part 2: Define a function `memoize`. This function can be called with any function that takes one argument, and returns a new function with the same signature. However, this returned function is automatically cache. Whenever this new function is called with an argument that has been used in the passed, the previous result is returned immediately without executing the base function. Example code:
