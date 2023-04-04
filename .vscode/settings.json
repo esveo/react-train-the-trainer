@@ -5,5 +5,7 @@
   },
   "markdown.extension.toc.levels": "2..6",
   "markdown.extension.print.onFileSave": true,
-  "markdown.extension.print.theme": "dark"
+  "markdown.extension.print.theme": "dark",
+  "editor.fontLigatures": false,
+  "prettier.printWidth": 60
 }

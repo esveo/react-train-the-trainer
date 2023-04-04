@@ -1,60 +1,11 @@
-import keineAhnung, { foo, x } from "./lib";
+import { createRoot } from "react-dom/client";
+import { App } from "./App";
 
-console.log("Hello World!!!!!");
+const root = document.getElementById("root")!;
 
-// let x: "mouseleave" = "mouseleave";
-
-// x = "test";
-
-// window.addEventListener('mous')
-
-let a: number = 1.2;
-let b = "test";
-let c = true;
-let d = {};
-let e = [];
-let f = null;
-let g = undefined;
-
-function sum(a: number, b: number) {
-  if (Math.random() < 0.5) return "hallo";
-  return a + b;
-}
-
-let h: 0 | 1 | 2 = 2;
-h = 0;
-// h = 3;
-
-type Tribool = 0 | 1 | 2;
-
-function sayHello(person: { name: string }) {
-  console.log(person.name);
-}
-
-let hans = { name: "hans", age: 10 };
-
-sayHello(hans);
-
-type Person = { name: string; age: number };
-
-function sayHello2(person: Person) {
-  console.log(`Person ${person.name} is ${person.age.toFixed(10)} years old`);
-}
-
-sayHello2(hans);
-
-type Options = 0 | 1 | 2 | { timeout: number };
-
-function executeSomething(options: Options) {
-  if (typeof options === "number") {
-    console.log(options.toFixed());
-  } else {
-    console.log(options.timeout);
-  }
-}
-
-foo();
-
-console.log(x);
-
-keineAhnung();
+createRoot(root).render(
+  <>
+    <App />
+    <App />
+  </>
+);

@@ -23,7 +23,6 @@ let f = null;
 let g = undefined;
 
 function sum(a: number, b: number) {
-  if (Math.random() < 0.5) return "hallo";
   return a + b;
 }
 
@@ -44,7 +43,11 @@ sayHello(hans);
 type Person = { name: string; age: number };
 
 function sayHello2(person: Person) {
-  console.log(`Person ${person.name} is ${person.age.toFixed(10)} years old`);
+  console.log(
+    `Person ${person.name} is ${person.age.toFixed(
+      10
+    )} years old`
+  );
 }
 
 sayHello2(hans);
@@ -64,3 +67,19 @@ foo();
 console.log(x);
 
 keineAhnung();
+
+var aa = 5;
+aa = 10;
+
+try {
+  var bb = 5;
+  let cc = 5;
+  const x = 5;
+} catch (err) {}
+
+function test() {
+  let x = 5;
+  var y = 5;
+}
+
+export {};
