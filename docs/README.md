@@ -197,13 +197,13 @@ function isPrime(n: number) {
 const cached = memoize(isPrime);
 
 // Calculates for 10
-isPrime(10);
+cached(10);
 
 // Calculates for 5
-isPrime(5);
+cached(5);
 
 // Directly reuses the previous result for 10
-isPrime(10);
+cached(10);
 ```
 
 <div class="break"></div>
