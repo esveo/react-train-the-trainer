@@ -1,9 +1,7 @@
-import { Button } from "./button/Button";
-
 export function App() {
   return (
-    <h1>
-      Hello World! <Button>Test</Button>
-    </h1>
+    <div>
+      <h1>Hallo Welt</h1>
+    </div>
   );
 }
