@@ -18,9 +18,13 @@ export function App() {
   return (
     <>
       <h1>Hello World</h1>
-      <button onClick={() => setShowCounter(!showCounter)}>
-        Toggle Counter
-      </button>
+      <div>
+        <button
+          onClick={() => setShowCounter(!showCounter)}
+        >
+          Toggle Counter
+        </button>
+      </div>
 
       <button onClick={() => setX(x + 1)}>{x}</button>
 
