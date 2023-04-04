@@ -1,11 +1,17 @@
+/**
+ * Default import can be named anything.
+ * Named imports must be named exactly as they are exported.
+ */
 import keineAhnung, { foo, x } from "./lib";
 
+// No difference between single and double quotes
 console.log("Hello World!!!!!");
 
 // let x: "mouseleave" = "mouseleave";
 
 // x = "test";
 
+// TypeScript supports very dynamic APIs like this
 // window.addEventListener('mous')
 
 let a: number = 1.2;

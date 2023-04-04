@@ -127,7 +127,7 @@
 
 1. Now that we have everything set up, let's first clear everything that we do not need at the moment
 1. Delete everything inside of the `src` folder, except `main.tsx` and `vite-env.d.ts`.
-1. Add `console.log('Hello World')` to your `main.tsx` file and make sure this runs in your browser.
+1. Remove everything from `main.tsx` and add a `console.log('Hello World')` and make sure this runs in your browser (even if you have a red underline under "console").
 
 <div class="break"></div>
 
