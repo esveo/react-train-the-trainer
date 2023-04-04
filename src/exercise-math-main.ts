@@ -1,4 +1,9 @@
-import { add, divide, multiply, subtract } from "./math";
+import {
+  add,
+  divide,
+  multiply,
+  subtract,
+} from "./exercise-math-lib";
 
 export {};
 

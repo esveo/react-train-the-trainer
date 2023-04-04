@@ -2,7 +2,7 @@
  * Default import can be named anything.
  * Named imports must be named exactly as they are exported.
  */
-import keineAhnung, { foo, x } from "./lib";
+import keineAhnung, { foo, x } from "./example-lib";
 
 // No difference between single and double quotes
 console.log("Hello World!!!!!");
